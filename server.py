@@ -1,10 +1,10 @@
 from socket import socket
 from threading import Thread
 from zlib import compress
-
+from pyngrok import ngrok
 from mss import mss
-
-
+tcp_tunnel = ngrok.connect(5000,"tcp")
+print(tcp_tunnel)
 WIDTH = 1900
 HEIGHT = 1000
 
@@ -36,6 +36,7 @@ def retreive_screenshot(conn):
 def main(host='0.0.0.0', port=5000):
     sock = socket()
     sock.bind((host, port))
+    print(sock)
     try:
         sock.listen(5)
         print('Server started.')
