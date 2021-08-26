@@ -7,6 +7,7 @@ try:
     hostport = int(sys.argv[2])
 except:
     hostport = 5000
+    print("you need to give a port. using 5000 for now")
 print(f"VARIABLES ARE HOSTIP = {hostip} AND HOSTPORT = {hostport}")
 WIDTH = 1900
 HEIGHT = 1000
