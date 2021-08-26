@@ -1,10 +1,14 @@
 from socket import socket
 from threading import Thread
 from zlib import compress
-from pyngrok import ngrok
+
 from mss import mss
-tcp_tunnel = ngrok.connect(5000,"tcp")
-print(tcp_tunnel)
+try:
+    from pyngrok import ngrok
+    tcp_tunnel = ngrok.connect(5000,"tcp")
+    print(tcp_tunnel)
+except Exception as e:
+    print("ngrok tunnel failed maybe set a token?") 
 WIDTH = 1900
 HEIGHT = 1000
 
