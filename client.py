@@ -2,8 +2,12 @@ from socket import socket
 from zlib import decompress
 import sys
 import pygame
-
 hostip = str(sys.argv[1])
+try:
+    hostport = int(sys.argv[2])
+except:
+    hostport = 5000
+print(f"VARIABLES ARE HOSTIP = {hostip} AND HOSTPORT = {hostport}")
 WIDTH = 1900
 HEIGHT = 1000
 
@@ -20,7 +24,7 @@ def recvall(conn, length):
     return buf
 
 
-def main(host=hostip, port=5000):
+def main(host=hostip, port=hostport):
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     clock = pygame.time.Clock()
