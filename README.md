@@ -1,5 +1,5 @@
 # screen-sharing
-USAGE:
+# USAGE:
 
 do: python server.py on the machine that shares the screen #note that ngrok is started automatically 
 
